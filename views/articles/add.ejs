@@ -1,0 +1,47 @@
+<h3>Add Article</h3>
+<div class="row">
+  <form action="/articles" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="name" name="name" />
+        <label for="name">Name:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <h5>Description:</h5>
+        <textarea id="description" name="description"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select id="category" name="category">
+          <option value="public" selected>Service</option>
+          <option value="private">Sale</option>
+        </select>
+        <label for="category">Category:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="available" name="available" />
+        <label for="available">Available:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="price" name="price" />
+        <label for="price">Price:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Save" class="btn" />
+      <a href="/dashboard" class="btn orange">Cancel</a>
+    </div>
+  </form>
+</div>
