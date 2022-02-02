@@ -17,7 +17,7 @@ router.post("/", ensureAuth, async (req, res) => {
     req.body.user = req.user.id;
     await Article.create(req.body);
     res.redirect("/dashboard");
-  } catch (error) {
+  } catch (err) {
     console.error(err);
     res.render("error/500");
   }
