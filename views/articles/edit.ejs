@@ -1,0 +1,65 @@
+<h3>Edit Article</h3>
+<div class="row">
+  <form action="/articles/<%=article._id%>" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT" />
+    <div class="row">
+      <div class="input-field">
+        <input type="text" id="name" name="name" value="<%= article.name %>" />
+        <label for="name">Name:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <h5>Description:</h5>
+        <textarea id="description" name="description">
+<%= article.description %></textarea
+        >
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select id="category" name="category">
+          <% if (article.category == "service"){ %>
+          <option value="service" selected>Service</option>
+          <option value="sale">Sale</option>
+          <%} else {%>
+          <option value="service">Service</option>
+          <option value="sale" selected>Sale</option>
+          <%}%>
+        </select>
+        <label for="category">Category:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input
+          type="text"
+          id="available"
+          name="available"
+          value="<%= article.available %>"
+        />
+        <label for="available">Available:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <input
+          type="text"
+          id="price"
+          name="price"
+          value="<%= article.price %>"
+        />
+        <label for="price">Price:</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Update" class="btn" />
+      <a href="/dashboard" class="btn orange">Cancel</a>
+    </div>
+  </form>
+</div>

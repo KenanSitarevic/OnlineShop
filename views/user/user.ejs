@@ -1,4 +1,6 @@
-<h1>Articles</h1>
+<h1><%= articles.user[0].displayName %></h1> 
+<h3>Has <%=articles.length %> articles</h3>
+
 
 <div class="flex-row flex-wrap justify-between">
   <% if (articles.length>0) { %> <% for (var i = 0; i < articles.length; i++ ){%>
@@ -12,20 +14,13 @@
           <a href="/articles/user/<%= articles[i].user._id %>"><%= articles[i].user.displayName %></a>
 
           <br>
-          <% if (user._id.toString() == articles[i].user._id.toString()) { %>
-            <div class="chip">
-              <a href="/articles/edit/<%= articles[i]._id %>">Edit</a>
-            </div>
-            <div class="chip">
-              <a href="/articles/delete/<%= articles[i]._id %>">Delete</a>
-            </div>
-          <% } %>
+          
         </div>
       </div>
     
     <% } %>
     <% } else{ %>
-    <h5>You do not have any articles</h5>
+    <h5><%= articles.user[0].displayName %> does not have any articles</h5>
     <% } %>
   </articles.length,i++){%>
 </div>

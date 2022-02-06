@@ -17,13 +17,17 @@
 
     <div class="row">
       <div class="input-field">
-        <select id="category" name="category">
-          <option value="public" selected>Service</option>
-          <option value="private">Sale</option>
+        <select id="category" name="category" multiple>
+            <% for (var i = 0; i < categories.length; i++ ){%>
+            <option value="<%=categories[i].value%>"> <%= categories[i].value %>
+            </option>
+            <%}%>
+          </select>
         </select>
         <label for="category">Category:</label>
       </div>
     </div>
+
 
     <div class="row">
       <div class="input-field">
