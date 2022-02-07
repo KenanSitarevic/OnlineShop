@@ -4,6 +4,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 const Article = require("../models/Article");
 const User = require("../models/User");
+const Cart = require("../models/Cart");
 const { session } = require("passport");
 
 //articles users orders
@@ -15,8 +16,13 @@ router.get("/", ensureAuth, async (req, res) => {
   try {
     const articles = await Article.find({}).populate("user").lean();
     const users = await User.find({}).lean();
-    //   const orders = await Orders.find({}).lean();
-    res.render("admin/index", { layout: "layouts/admin", articles, users });
+    const orders = await Cart.find({}).lean();
+    res.render("admin/index", {
+      layout: "layouts/admin",
+      articles,
+      users,
+      orders,
+    });
   } catch (err) {
     console.error(err);
     res.render("error/500");
