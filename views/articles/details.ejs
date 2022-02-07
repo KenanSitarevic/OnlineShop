@@ -1,14 +1,20 @@
 <h1>Details</h1>
 <%= article.name %>
 <br />
-<%= article._id%>
+<%= article.price%>
 <br />
 <%= article.user.displayName %>
 <form></form>
 <form action="addToCart/<%=article._id%>" method="POST" class="col s12">
   <div class="row">
     <div class="input-field">
-      <input type="number" id="qty" name="qty" />
+      <input
+        type="number"
+        id="qty"
+        name="qty"
+        min="0"
+        max="<%=article.available%>"
+      />
       <label for="qty">Quantity:</label>
     </div>
   </div>

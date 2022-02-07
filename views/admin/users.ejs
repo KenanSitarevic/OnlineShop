@@ -1,0 +1,36 @@
+<h1>THIS IS ADMIN</h1>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Archive</th>
+    <th>Block</th>
+    <th>Activate</th>
+  </tr>
+  <%for (let i = 0; i < users.length; i++) { %>
+  <tr>
+    <td><%=users[i].displayName%></td>
+    <td><i class="fas fa-trash"></i></td>
+
+    <%if(users[i].status=='Active'){%>
+    <td>
+      <a href="block/<%=users[i]._id%>"> <i class="fas fa-ban"></i></a>
+    </td>
+    <td>
+      <a class="disableClick" href="unblock/<%=users[i]._id%>">
+        <i class="fas fa-check"></i
+      ></a>
+    </td>
+    <%} else {%>
+    <td>
+      <a class="disableClick" href="block/<%=users[i]._id%>">
+        <i class="fas fa-ban"></i
+      ></a>
+    </td>
+    <td>
+      <a href="unblock/<%=users[i]._id%>"> <i class="fas fa-check"></i></a>
+    </td>
+
+    <%}%>
+  </tr>
+  <%}%>
+</table>

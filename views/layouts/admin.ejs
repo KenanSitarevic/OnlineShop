@@ -16,22 +16,26 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <script>
-      $(document).ready(function () {
-        $("select").material_select();
-      });
-    </script>
 
-    <title>OnlineShop login</title>
+    <title>OnlineShop</title>
   </head>
   <body>
-    <div class="container login-container">
-      <div class="card">
-        <div class="card-content">
-          <main><%- body %></main>
-        </div>
-      </div>
-    </div>
+    <%- include('../partials/_admin_header')-%>
+    <main class="container montserrat"><%- body %></main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.17.1/ckeditor.js"
+      integrity="sha512-VXEKi5eNc7ECuyIueuledlqeUWiJ7hcxBe9fnsCiVzeZ0XwJxAPemnq01/LBIBnp3i0szhvKNd9Us7fqNPsRmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      M.Sidenav.init(document.querySelector(".sidenav"));
+      M.FormSelect.init(document.querySelector("#category"));
+
+      CKEDITOR.replace("description", {
+        plugins: "wysiwygarea, toolbar, basicstyles, link",
+      });
+    </script>
   </body>
 </html>

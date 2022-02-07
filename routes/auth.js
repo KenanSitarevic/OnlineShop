@@ -22,6 +22,7 @@ router.get(
 //@desc         Logout user
 //@route        /auth/logout
 router.get("/logout", (req, res) => {
+  req.session.cart.order = [];
   req.logout();
   res.redirect("/");
 });

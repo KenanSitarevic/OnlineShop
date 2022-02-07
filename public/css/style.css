@@ -57,3 +57,7 @@
 .select {
   display: block !important;
 }
+
+.disableClick {
+  pointer-events: none;
+}

@@ -1,0 +1,36 @@
+<h1>THIS IS ADMIN</h1>
+<h1>All Articles</h1>
+
+<div class="flex-row flex-wrap justify-between">
+  <% if (articles.length>0) { %> <% for (var i = 0; i < articles.length; i++
+  ){%>
+  <div
+    onclick="location.href='articles/<%=articles[i]._id%>'"
+    class="card clickable width-30"
+  >
+    <div class="col s12">
+      <img
+        class="responsive-img"
+        src="<%=articles[i].image[0] %>"
+        alt="Avatar"
+      />
+    </div>
+    <div class="col s12">
+      <h5><b><%= articles[i].name %></b></h5>
+      <%- articles[i].description %>
+      <a href="/articles/user/<%= articles[i].user._id %>"
+        ><%= articles[i].user.displayName %></a
+      >
+      <br />
+      <div class="chip">
+        <a href="/articles/edit/<%= articles[i]._id %>">Edit</a>
+      </div>
+      <div class="chip">
+        <a href="/articles/delete/<%= articles[i]._id %>">Delete</a>
+      </div>
+    </div>
+  </div>
+  <% } %> <% } else{ %>
+  <h5>You do not have any articles</h5>
+  <% } %>
+</div>

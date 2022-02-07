@@ -1,5 +1,9 @@
 <h1>Articles</h1>
 
+<form action="/articles/search" method="POST" class="col s12">
+  <input type="text" id="search" name="search" placeholder="Search for articles..."/>
+</form>
+
 <div class="flex-row flex-wrap justify-between">
   <% if (articles.length>0) { %> <% for (var i = 0; i < articles.length; i++ ){%>
       <div onclick="location.href='articles/<%=articles[i]._id%>'" class="card clickable width-30">
